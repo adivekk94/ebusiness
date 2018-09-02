@@ -1,0 +1,10 @@
+[0m[[0mdebug[0m] [0mCopy resource mappings: [0m
+[0m[[0mdebug[0m] [0m	(/home/adivek/Studia/ebusiness/myProject2/conf/evolutions,/home/adivek/Studia/ebusiness/myProject2/target/scala-2.12/classes/evolutions)[0m
+[0m[[0mdebug[0m] [0m	(/home/adivek/Studia/ebusiness/myProject2/conf/application.conf,/home/adivek/Studia/ebusiness/myProject2/target/scala-2.12/classes/application.conf)[0m
+[0m[[0mdebug[0m] [0m	(/home/adivek/Studia/ebusiness/myProject2/conf/routes,/home/adivek/Studia/ebusiness/myProject2/target/scala-2.12/classes/routes)[0m
+[0m[[0mdebug[0m] [0m	(/home/adivek/Studia/ebusiness/myProject2/conf/silhouette.conf,/home/adivek/Studia/ebusiness/myProject2/target/scala-2.12/classes/silhouette.conf)[0m
+[0m[[0mdebug[0m] [0m	(/home/adivek/Studia/ebusiness/myProject2/conf/application.prod.conf,/home/adivek/Studia/ebusiness/myProject2/target/scala-2.12/classes/application.prod.conf)[0m
+[0m[[0mdebug[0m] [0m	(/home/adivek/Studia/ebusiness/myProject2/conf/messages,/home/adivek/Studia/ebusiness/myProject2/target/scala-2.12/classes/messages)[0m
+[0m[[0mdebug[0m] [0m	(/home/adivek/Studia/ebusiness/myProject2/conf/evolutions/default,/home/adivek/Studia/ebusiness/myProject2/target/scala-2.12/classes/evolutions/default)[0m
+[0m[[0mdebug[0m] [0m	(/home/adivek/Studia/ebusiness/myProject2/conf/evolutions/default/1.sql,/home/adivek/Studia/ebusiness/myProject2/target/scala-2.12/classes/evolutions/default/1.sql)[0m
+[0m[[0mdebug[0m] [0m	(/home/adivek/Studia/ebusiness/myProject2/conf/evolutions/default/2.sql,/home/adivek/Studia/ebusiness/myProject2/target/scala-2.12/classes/evolutions/default/2.sql)[0m
