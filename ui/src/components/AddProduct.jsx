@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import {FormGroup, Button, ControlLabel, HelpBlock, FormControl} from 'react-bootstrap';
+import {FormGroup, Button, ControlLabel, HelpBlock, FormControl, DropdownButton, MenuItem, ButtonToolbar} from 'react-bootstrap';
 import {addProduct} from '../utils/post-api';
+import {getCategories} from '../utils/get-api';
 
 function FieldGroup({
   id,
@@ -22,6 +23,7 @@ class AddProduct extends Component {
     super(props, context);
 
     this.state = {
+      categories : [],
       product_name: '',
       product_description: '',
       product_category: '',
@@ -46,6 +48,10 @@ class AddProduct extends Component {
       .bind(this);
   }
 
+  renderOption = (json) => {
+    return <option value={json.id}>{json.name}</option>
+  }
+
   handleProductNameChange = (e) => {
     this.setState({product_name: e.target.value});
   }
@@ -68,9 +74,22 @@ class AddProduct extends Component {
     addProduct(this.state.product_name, this.state.product_description, this.state.product_category, this.state.product_key_words);
     this.setState({product_added: true});
   }
+  
+  getCategories() {
+    getCategories().then((categories) => {
+      this.setState({categories});
+    })
+  }
+  
+  componentDidMount() {
+	  this.getCategories();
+  }
+
+  
 
   render() {
     if (!this.state.product_added) {
+    const catConst = this.state.categories;
       return (
         <div>
           <form onSubmit={this.postData}>
@@ -88,13 +107,13 @@ class AddProduct extends Component {
               placeholder="Enter product description"
               onChange={this.handleProductDescriptionChange}/>
 
-            <FieldGroup
-              id="product_category"
-              type="text"
-              label="Product category"
-              placeholder="Enter product category"
-              onChange={this.handleProductCategoryChange}/>
-
+            <FormGroup controlId="formControlsSelect">
+              <ControlLabel>Product category</ControlLabel>
+              <FormControl componentClass="select" placeholder="Choose category" onChange={this.handleProductCategoryChange}>
+                {catConst.map(this.renderOption)}
+              </FormControl>
+            </FormGroup>
+            
             <FieldGroup
               id="product_key_words"
               type="text"
@@ -110,8 +129,7 @@ class AddProduct extends Component {
       return (
         <div>
           <h1>
-            Product {this.state.product_name}
-            added!
+            Product {this.state.product_name} added!
           </h1>
         </div>
       );

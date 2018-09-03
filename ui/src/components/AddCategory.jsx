@@ -65,8 +65,7 @@ class AddCategory extends Component {
       return (
         <div>
           <h1>
-            Category {this.state.category_name}
-            added!
+            Category {this.state.category_name} added!
           </h1>
         </div>
       );

@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/adivek/Studia/ebusiness/myProject2/conf/routes
-// @DATE:Sun Sep 02 22:59:55 CEST 2018
+// @DATE:Mon Sep 03 22:57:57 CEST 2018
 
 package controllers;
 
