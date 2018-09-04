@@ -110,6 +110,7 @@ class AddProduct extends Component {
             <FormGroup controlId="formControlsSelect">
               <ControlLabel>Product category</ControlLabel>
               <FormControl componentClass="select" placeholder="Choose category" onChange={this.handleProductCategoryChange}>
+                <option value="" selected disabled hidden>Choose category</option>
                 {catConst.map(this.renderOption)}
               </FormControl>
             </FormGroup>
@@ -129,7 +130,7 @@ class AddProduct extends Component {
       return (
         <div>
           <h1>
-            Product {this.state.product_name} added!
+            Product <b><i>{this.state.product_name}</i></b> added!
           </h1>
         </div>
       );

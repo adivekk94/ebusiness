@@ -25,7 +25,7 @@ class Login extends Component {
         <Navbar.Collapse>
           <Nav pullRight>
             <Navbar.Text>
-              <div class="loginUsing">Login using <a href="http://localhost:9000/authenticate/facebook"><img src={fbLogoUrl} height="30" alt="facebook"/></a></div>
+              <div className="loginUsing">Login using <a href="http://localhost:9000/authenticate/facebook"><img src={fbLogoUrl} height="30" alt="facebook"/></a></div>
             </Navbar.Text>
           </Nav>
         </Navbar.Collapse >
