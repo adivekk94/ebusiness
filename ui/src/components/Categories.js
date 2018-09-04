@@ -24,12 +24,12 @@ class Categories extends Component {
     const {categories} = this.state;
     return (
       <div>
-        <h3 className="text-center">Categories</h3>
+        <h3 className="text-center"><b>Categories - list</b></h3>
         <hr/>
         <ListGroup>
           {categories.map((category, index) => (
-            <ListGroupItem key={index} header={category.id}>
-              {category.name}
+            <ListGroupItem key={index}>
+            {category.name}
             </ListGroupItem>
           ))}
         </ListGroup>

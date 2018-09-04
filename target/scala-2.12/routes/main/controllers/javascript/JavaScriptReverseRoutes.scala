@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/adivek/Studia/ebusiness/myProject2/conf/routes
-// @DATE:Mon Sep 03 22:57:57 CEST 2018
+// @DATE:Tue Sep 04 21:30:04 CEST 2018
 
 import play.api.routing.JavaScriptReverseRoute
 

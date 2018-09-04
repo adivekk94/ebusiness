@@ -53,7 +53,7 @@ class Basket extends Component {
     const {basket} = this.state;
     return (
       <div>
-        <h3 className="text-center">Basket</h3>
+        <h3 className="text-center"><b>Basket</b></h3>
         <hr/> {basket.map((product, index) => (
           <div className="col-sm-6" key={index}>
             <div className="panel panel-primary">

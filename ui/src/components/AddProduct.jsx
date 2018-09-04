@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {FormGroup, Button, ControlLabel, HelpBlock, FormControl, DropdownButton, MenuItem, ButtonToolbar} from 'react-bootstrap';
+import {FormGroup, Button, ControlLabel, HelpBlock, FormControl} from 'react-bootstrap';
 import {addProduct} from '../utils/post-api';
 import {getCategories} from '../utils/get-api';
 

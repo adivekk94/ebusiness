@@ -36,7 +36,7 @@ class Products extends Component {
     const {products} = this.state;
     return (
       <div>
-        <h3 className="text-center">Products</h3>
+        <h3 className="text-center"><b>Products</b></h3>
         <hr/> {products.map((product, index) => (
           <div className="col-sm-6" key={index}>
             <div className="panel panel-primary">

@@ -58,7 +58,6 @@ class App extends Component {
             loginData={this.props.location.query}
             basketData={this.state.basketItems}
             switchView={this.switchView}/>
-          <Categories/>
           <Products updateBasket={this.updateBasket}/>
         </div>
       );
@@ -90,6 +89,16 @@ class App extends Component {
             basketData={this.state.basketItems}
             switchView={this.switchView}/>
           <AddProduct/>
+        </div>
+      );
+    } else if(this.state.viewID === 4) {
+      return (
+        <div>
+          <Header
+              loginData={this.props.location.query}
+              basketData={this.state.basketItems}
+              switchView={this.switchView}/>
+          <Categories/>
         </div>
       );
     }
