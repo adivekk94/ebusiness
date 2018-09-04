@@ -23,7 +23,7 @@ class Header extends Component {
       <Navbar inverse collapseOnSelect fixedTop >
         <Navbar.Header>
           <Navbar.Brand >
-            <div id="shopAll"><a class="shop" onClick={this.changeView}><img align="bottom" alt="" src={shopLogoUrl} width="30"/><i><b>Shop</b></i></a></div>
+            <div id="shopAll"><a className="shop" onClick={this.changeView}><img align="bottom" alt="" src={shopLogoUrl} width="30"/><i><b>Shop</b></i></a></div>
           </Navbar.Brand>
           <Navbar.Toggle/>
         </Navbar.Header>

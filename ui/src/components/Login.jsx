@@ -47,7 +47,7 @@ class Login extends Component {
           </Nav>
           <Nav pullRight>
             <Navbar.Text pullRight>
-              <div class="welcome">Welcome <i>{this.props.firstName.substring(5, this.props.firstName.length - 1)} {this.props.lastName.substring(5, this.props.lastName.length - 1)}</i>!</div>
+              <div className="welcome">Welcome <i>{this.props.firstName.substring(5, this.props.firstName.length - 1)} {this.props.lastName.substring(5, this.props.lastName.length - 1)}</i>!</div>
               <a href="http://localhost:3000">Logout</a>
             </Navbar.Text> 
             <Image
