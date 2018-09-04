@@ -1,13 +1,16 @@
 import React, {Component} from 'react';
-import {getProducts} from '../utils/get-api';
+import {getProducts, getCategories} from '../utils/get-api';
 import {addToBasket} from '../utils/post-api';
+
+const addLogoUrl = "https://www.freeiconspng.com/uploads/cart-icon-9.png"
 
 class Products extends Component {
 
   constructor() {
     super()
     this.state = {
-      products: []
+      products: [],
+      categories: []
     };
     this.addBasketItem = this
       .addBasketItem
@@ -20,20 +23,36 @@ class Products extends Component {
     });
   }
 
+  getCategories() {
+    getCategories().then((categories) => {
+      this.setState({categories});
+    });
+  }
+
   componentDidMount() {
     this.getProducts();
+    this.getCategories();
   }
 
   addBasketItem(product_id) {
-    this
-      .props
-      .updateBasket()
+    this.props.updateBasket()
     addToBasket(product_id)
+  }
+
+  getRelatedCategoryName(categories, product) {
+    for(var idx = 0; idx < categories.length; idx++)
+    {
+      if(categories[idx].id === product.category)
+      {
+        return categories[idx].name;
+      }
+    }
   }
 
   render() {
 
     const {products} = this.state;
+    const {categories} = this.state;
     return (
       <div>
         <h3 className="text-center"><b>Products</b></h3>
@@ -42,18 +61,16 @@ class Products extends Component {
             <div className="panel panel-primary">
               <div className="panel-heading">
                 <h3 className="panel-title">
-                  <span
-                    className="btn"
-                    onClick={this
-                    .addBasketItem
-                    .bind(this, product.id)}>#{product.id}: {product.name}</span>
+                    <img id="addButton" src={addLogoUrl} onClick={this.addBasketItem.bind(this, product.id)} width="30" alt="add"/> <b>{product.name} <i>({this.getRelatedCategoryName(categories, product)})</i></b>
                 </h3>
               </div>
               <div className="panel-body">
-                <p>
+                <p align="center" id="productDesc">
                   {product.description}
                 </p>
-                <p>Key words: {product.key_words}
+                <p>
+                  <br></br>
+                  <i>Key words: {product.key_words}</i>
                 </p>
               </div>
             </div>

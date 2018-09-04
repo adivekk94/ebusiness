@@ -16,6 +16,10 @@ a.shop{
     cursor: pointer;
 }
 
+#addButton{
+    cursor: pointer;
+}
+
 #shopAll{
     padding-top: 20px;
 }

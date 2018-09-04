@@ -3,6 +3,8 @@ import {getBasket} from '../utils/get-api';
 import {getProduct} from '../utils/get-api';
 import {deleteFromBasket} from '../utils/delete-api';
 
+const removeLogoUrl = "https://png2.kisspng.com/20180401/hle/kisspng-web-development-amazon-com-shopping-cart-e-commerc-add-to-cart-button-5ac189c84a97c3.2416793915226331603055.png"
+
 class Basket extends Component {
 
   constructor() {
@@ -22,9 +24,7 @@ class Basket extends Component {
   removeItem(product_id) {
     deleteFromBasket(product_id).then((result) => {
       this.getBasket()
-      this
-        .props
-        .basketChanged()
+      this.props.basketChanged()
     })
 
   }
@@ -35,13 +35,17 @@ class Basket extends Component {
       this.setState({basketItems: basket})
       basket.map((item, index) => (getProduct(item.product_id).then((product) => {
         this.setState({
-          basket: this
-            .state
-            .basket
-            .concat([product])
+          basket: this.state.basket.concat([product])
         })
       })))
     });
+  }
+
+  renderNoItemsIfNecessary(basket) {
+    if(basket.length === 0)
+    {
+      return <h3 className="text-center"><i>No items in basket</i></h3>
+    }
   }
 
   componentDidMount() {
@@ -49,31 +53,26 @@ class Basket extends Component {
   }
 
   render() {
-
     const {basket} = this.state;
     return (
       <div>
         <h3 className="text-center"><b>Basket</b></h3>
+        {this.renderNoItemsIfNecessary(basket)}
         <hr/> {basket.map((product, index) => (
           <div className="col-sm-6" key={index}>
             <div className="panel panel-primary">
               <div className="panel-heading">
                 <h3 className="panel-title">
-                  <span className="btn">#{product.id}: {product.name}
-                  </span>
-                  <span
-                    className="btn"
-                    onClick={this
-                    .removeItem
-                    .bind(this, this.state.basketItems[index].id)}>Remove
-                  </span>
+                  <img id="addButton" src={removeLogoUrl} onClick={this.removeItem.bind(this, this.state.basketItems[index].id)} width="30" alt="remove"/> <b>{product.name}</b>
                 </h3>
               </div>
               <div className="panel-body">
-                <p>
+                <p align="center" id="productDesc">
                   {product.description}
                 </p>
-                <p>Key words: {product.key_words}
+                <p>
+                  <br></br>
+                  <i>Key words: {product.key_words}</i>
                 </p>
               </div>
             </div>
